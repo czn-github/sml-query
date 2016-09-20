@@ -38,7 +38,7 @@ public class DataBuilderHelper {
 			return false;
 		}
 		if(!classpath.contains(".")){
-			classpath+=FrameworkConstant.CFG_DEFAULT_BUILDER_CLASS+"."+classpath;
+			classpath=FrameworkConstant.CFG_DEFAULT_BUILDER_CLASS+"."+classpath;
 		}
 		return splitClass.contains(classpath);
 	}
@@ -86,7 +86,7 @@ public class DataBuilderHelper {
 		String classpath=rebuildParam.getClasspath();
 		if(classpath!=null){
 			if(!classpath.contains(".")){
-				classpath+=FrameworkConstant.CFG_DEFAULT_BUILDER_CLASS+"."+classpath;
+				classpath=FrameworkConstant.CFG_DEFAULT_BUILDER_CLASS+"."+classpath;
 			}
 			return classpath;
 		}
