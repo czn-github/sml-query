@@ -16,10 +16,10 @@ public class SqlMarkupAbstractTemplateDemo {
 	@Test
 	public  void testQuery() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-		dataSource.setUrl("jdbc:oracle:thin:@10.221.247.46:1521/ipms");
-		dataSource.setUsername("ipmsdm");
-		dataSource.setPassword("SHipmsdm!23$");
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://23.247.25.117:3306/hw");
+		dataSource.setUsername("root");
+		dataSource.setPassword("hlw");
 		//库集
 		Map<String,DataSource> dss=new HashMap<String,DataSource>();
 		dss.put("defJt", dataSource);
@@ -29,7 +29,7 @@ public class SqlMarkupAbstractTemplateDemo {
 		jf.init();
 		//使用核心方法-迪士尼客流量查询
 		try{
-			Object data=jf.getSmlContextUtils().query("area-pm", "");
+			Object data=jf.getSmlContextUtils().query("if-test", "");
 			System.out.println(data);
 		}catch(Exception e){
 			e.printStackTrace();
