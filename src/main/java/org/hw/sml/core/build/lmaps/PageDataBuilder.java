@@ -17,6 +17,8 @@ public class PageDataBuilder extends AbstractDataBuilder {
 		if(count>0){
 			sqlTemplate.getSmlParams().getSmlParam(FrameworkConstant.PARAM_QUERYTYPE).setValue("select");
 			List<Map<String,Object>> data=smlContextUtils.getJdbcFTemplate().querySql(sqlTemplate);
+			if(rebuildParam.getExtMap().get(FrameworkConstant.PARAM_TOLOWERCASEFORKEY)!=null&&rebuildParam.getExtMap().get(FrameworkConstant.PARAM_TOLOWERCASEFORKEY).equals("true"))
+				data=MapUtils.toLowerCaseForKey(data);
 			if(oriFields!=null&&newFields!=null){
 				data=MapUtils.rebuildMp(data, oriFields,newFields);
 			}
